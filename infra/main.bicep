@@ -3,11 +3,11 @@ targetScope = 'subscription'
 @minLength(1)
 @maxLength(64)
 @description('Name of the the environment which is used to generate a short unique hash used in all resources.')
-param environmentName string
+param environmentName string = 'demo' //TEMP
 
 @minLength(1)
 @description('Primary location for all resources')
-param location string
+param location string = 'canadaeast' //TEMP
 
 param appServicePlanName string = ''
 param backendServiceName string = ''
@@ -57,7 +57,7 @@ param searchServiceSecretName string = 'searchServiceSecret'
     type: 'location'
   }
 })
-param openAiResourceGroupLocation string
+param openAiResourceGroupLocation string = 'eastus' // TEMP
 
 param openAiSkuName string = 'S0'
 
