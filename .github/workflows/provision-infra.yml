@@ -38,5 +38,5 @@ jobs:
           resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
           template: ./infra/main.bicep
           parameters: environmentType=${{ env.ENVIRONMENT }}
-          scope: ${{ secrets.AZURE_SCOPE }}
+          scope: resourcegroup
           # deploymentMode: Incremental
