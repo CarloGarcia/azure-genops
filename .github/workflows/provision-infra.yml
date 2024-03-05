@@ -36,7 +36,7 @@ jobs:
         with:
           deploymentName: ${{ github.run_number }}
           resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
-          template: ./infra/main.bicep
+          template: ./repo/infra/main.bicep
           parameters: environmentType=${{ env.ENVIRONMENT }}
           scope: resourcegroup
           # deploymentMode: Incremental
