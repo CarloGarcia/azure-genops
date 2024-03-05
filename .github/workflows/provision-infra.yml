@@ -38,5 +38,5 @@ jobs:
           resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
           template: ./repo/infra/main.bicep
           parameters: environmentType=${{ env.ENVIRONMENT }}
-          scope: resourcegroup
+          scope: subscription
           # deploymentMode: Incremental
