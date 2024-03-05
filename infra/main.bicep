@@ -410,8 +410,8 @@ module storage 'core/storage/storage-account.bicep' = {
       name: storageSkuName
     }
     deleteRetentionPolicy: {
-      enabled: true
-      days: 2
+      enabled: false
+      // days: 2
     }
     containers: [
       {
