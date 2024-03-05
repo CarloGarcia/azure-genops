@@ -11,7 +11,7 @@ param location string = 'canadaeast' //TEMP
 
 param appServicePlanName string = ''
 param backendServiceName string = ''
-param resourceGroupName string = 'rg-rag-demo'
+param resourceGroupName string = 'rg-demo'
 
 param applicationInsightsDashboardName string = ''
 param applicationInsightsName string = ''
