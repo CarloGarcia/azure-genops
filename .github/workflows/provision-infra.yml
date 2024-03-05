@@ -14,7 +14,8 @@ permissions:
   contents: read    
 
 env:
-  AZURE_RESOURCEGROUP_NAME: rg-rag-demo   
+  AZURE_RESOURCEGROUP_NAME: rg-rag-demo
+  ENVIRONMENT: dev
 
 jobs:
   deploy:
@@ -33,8 +34,9 @@ jobs:
     
       - uses: azure/arm-deploy@v1
         with:
-          scope: ${{ secrets.AZURE_SCOPE }}
+          deploymentName: ${{ github.run_number }}
           resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
           template: ./infra/main.bicep
-          parameters: environmentType=Test
-          deploymentMode: Incremental
+          parameters: environmentType=${{ env.ENVIRONMENT }}
+          scope: ${{ secrets.AZURE_SCOPE }}
+          # deploymentMode: Incremental
