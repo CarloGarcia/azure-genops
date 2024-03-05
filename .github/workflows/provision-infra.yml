@@ -16,6 +16,7 @@ permissions:
 env:
   AZURE_RESOURCEGROUP_NAME: rg-rag-demo
   ENVIRONMENT: dev
+  REGION: canadaeast
 
 jobs:
   deploy:
@@ -39,4 +40,5 @@ jobs:
           template: ./repo/infra/main.bicep
           parameters: environmentType=${{ env.ENVIRONMENT }}
           scope: subscription
+          region: ${{ env.REGION }}
           # deploymentMode: Incremental
