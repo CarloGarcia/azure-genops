@@ -22,11 +22,11 @@ param searchServiceResourceGroupName string = ''
 param searchServiceLocation string = ''
 // The free tier does not support managed identity (required) or semantic search (optional)
 @allowed([ 'free', 'basic', 'standard', 'standard2', 'standard3', 'storage_optimized_l1', 'storage_optimized_l2' ])
-param searchServiceSkuName string // Set in main.parameters.json
-param searchIndexName string // Set in main.parameters.json
-param searchQueryLanguage string // Set in main.parameters.json
-param searchQuerySpeller string // Set in main.parameters.json
-param searchServiceSemanticRankerLevel string // Set in main.parameters.json
+param searchServiceSkuName string = 'standard' // Set in main.parameters.json
+param searchIndexName string = 'gptkbindex' // Set in main.parameters.json
+param searchQueryLanguage string = 'en-us' // Set in main.parameters.json
+param searchQuerySpeller string = 'lexicon' // Set in main.parameters.json
+param searchServiceSemanticRankerLevel string = 'free' // Set in main.parameters.json
 var actualSearchServiceSemanticRankerLevel = (searchServiceSkuName == 'free') ? 'disabled' : searchServiceSemanticRankerLevel
 param useSearchServiceKey bool = searchServiceSkuName == 'free'
 
@@ -34,12 +34,12 @@ param storageAccountName string = ''
 param storageResourceGroupName string = ''
 param storageResourceGroupLocation string = location
 param storageContainerName string = 'content'
-param storageSkuName string // Set in main.parameters.json
+param storageSkuName string = 'Standard_LRS' // Set in main.parameters.json
 
-param appServiceSkuName string // Set in main.parameters.json
+param appServiceSkuName string = 'B1' // Set in main.parameters.json
 
 @allowed([ 'azure', 'openai', 'azure_custom' ])
-param openAiHost string // Set in main.parameters.json
+param openAiHost string = 'azure'// Set in main.parameters.json
 param azureOpenAiCustomUrl string = ''
 
 param openAiServiceName string = ''
@@ -84,12 +84,12 @@ param computerVisionResourceGroupName string = ''
 param computerVisionResourceGroupLocation string = 'eastus' // Vision vectorize API is yet to be deployed globally
 param computerVisionSkuName string = 'S1'
 
-param chatGptDeploymentName string // Set in main.parameters.json
+param chatGptDeploymentName string = 'chat' // Set in main.parameters.json
 param chatGptDeploymentCapacity int = 30
 param chatGpt4vDeploymentCapacity int = 10
 param chatGptModelName string = startsWith(openAiHost, 'azure') ? 'gpt-35-turbo' : 'gpt-3.5-turbo'
 param chatGptModelVersion string = '0613'
-param embeddingDeploymentName string // Set in main.parameters.json
+param embeddingDeploymentName string = 'embedding' // Set in main.parameters.json
 param embeddingDeploymentCapacity int = 30
 param embeddingModelName string = 'text-embedding-ada-002'
 param gpt4vModelName string = 'gpt-4'
