@@ -116,7 +116,7 @@ jobs:
           deploymentName: ${{ github.run_number }}
           resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
           template: ./repo/infra/main.bicep
-          parameters: ./repo/infra/main.parameters.bicep
+          parameters: ./repo/infra/main.parameters.json
           scope: subscription
           region: ${{ env.REGION }}
           deploymentMode: Validation # Incremental
