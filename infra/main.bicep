@@ -11,7 +11,7 @@ param location string = 'canadaeast' //TEMP
 
 param appServicePlanName string = ''
 param backendServiceName string = ''
-param resourceGroupName string = ''
+param resourceGroupName string = 'rg-rag-demo'
 
 param applicationInsightsDashboardName string = ''
 param applicationInsightsName string = ''
@@ -113,7 +113,7 @@ param clientAppSecret string = ''
 param allowedOrigin string = '' // should start with https://, shouldn't end with a /
 
 @description('Id of the user or app to assign application roles')
-param principalId string = ''
+param principalId string = 'dbc72132-aac6-4d8a-ab5e-83b818444880'
 
 @description('Use Application Insights for monitoring and performance tracing')
 param useApplicationInsights bool = false
